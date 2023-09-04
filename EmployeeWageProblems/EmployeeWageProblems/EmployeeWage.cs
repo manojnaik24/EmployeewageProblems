@@ -9,7 +9,7 @@ namespace EmployeeWageProblems
     public  class EmployeeWage
     {
         const int wagePerHour = 20,  isFullTime = 1;
-        int PartTime = 8;
+        int PartTime = 4;
         int fullDayHour = 0;
 
         public void Attendance()
@@ -17,23 +17,34 @@ namespace EmployeeWageProblems
             Random random = new Random();
 
             int empCheck = random.Next(0,2);
-            if (empCheck == isFullTime  )
-            {
+
+            switch (empCheck)
+            {  
+                case isFullTime:
                 Console.WriteLine("Employee is Present");
                 fullDayHour=8;
-                
+                    int empWage = fullDayHour * wagePerHour;
 
-            }
-            else
-            {
-                Console.WriteLine("Employee is Absent");
-            }
+                    Console.WriteLine("Daily Wage is:" + empWage);
+                    break;
 
-            int empWage = fullDayHour * wagePerHour;
+                case int PartTime:
+                    int emp = PartTime * wagePerHour;
+                    Console.WriteLine("Part Time Wage:" + emp);
+
+                    break;
+
+                default:
+                    Console.WriteLine("Employee is Absent");
+                    break;
+            }
            
-            Console.WriteLine("Daily Wage is:" + empWage);
-            int emp = PartTime * wagePerHour;
-            Console.WriteLine("Part Time Wage:" + emp);
+
+            
+
+
+                
+            
         }
     }
 }

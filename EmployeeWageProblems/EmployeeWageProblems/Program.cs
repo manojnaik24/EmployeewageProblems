@@ -12,7 +12,7 @@ namespace EmployeeWageProblems
         {
             EmployeeWage ew = new EmployeeWage();
             ew.Attendance();
-
+           
             Console.ReadLine();
         }
     }
