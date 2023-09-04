@@ -9,8 +9,9 @@ namespace EmployeeWageProblems
     public  class EmployeeWage
     {
         const int wagePerHour = 20,  isFullTime = 1;
-        int PartTime = 4;
+        int partTime = 4;
         int fullDayHour = 0;
+        int perMoth = 20;
 
         public void Attendance()
         {
@@ -23,9 +24,7 @@ namespace EmployeeWageProblems
                 case isFullTime:
                 Console.WriteLine("Employee is Present");
                 fullDayHour=8;
-                    int empWage = fullDayHour * wagePerHour;
-
-                    Console.WriteLine("Daily Wage is:" + empWage);
+                   
                     break;
 
                 case int PartTime:
@@ -34,11 +33,29 @@ namespace EmployeeWageProblems
 
                     break;
 
+                
+
+
                 default:
                     Console.WriteLine("Employee is Absent");
+
                     break;
+
+                    WagePerMoth();
             }
-           
+            void DailyWage(int wagePerHour)
+            {
+                int empWage = fullDayHour * wagePerHour;
+
+                Console.WriteLine("Daily Wage is:" + empWage);
+            }
+
+
+           void WagePerMoth()
+            {
+                int PM = perMoth * wagePerHour * fullDayHour;
+                Console.WriteLine("monthly wage is"+ PM);
+            }
 
             
 
